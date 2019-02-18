@@ -1,18 +1,20 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <div class="home">{{ users.map(user => user.name) }}</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import gql from "graphql-tag";
 export default {
   name: "home",
-  components: {
-    HelloWorld
+  apollo: {
+    users: gql`
+      query {
+        users {
+          email
+          name
+        }
+      }
+    `
   }
 };
 </script>
