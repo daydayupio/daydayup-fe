@@ -1,25 +1,22 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If iView is successfully added to this project, you'll see an
-        <code v-text="'<Button>'"></code>
-        below
-      </p>
-      <Button type="primary">Button</Button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import { getAuthToken } from "./utils/helper";
 export default {
   name: "app",
-  components: {
-    HelloWorld
+  components: {},
+  created() {
+    if (
+      this.$route.name !== "login" &&
+      this.$route.name !== "register" &&
+      !getAuthToken()
+    ) {
+      this.$router.push({ name: "login" });
+    }
   }
 };
 </script>
