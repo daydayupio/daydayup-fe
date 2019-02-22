@@ -69,6 +69,7 @@ export function createProvider(options = {}) {
     defaultOptions: {
       $query: {
         // fetchPolicy: 'cache-and-network',
+        fetchPolicy: 'network-only',
       }
     },
     errorHandler(error) {

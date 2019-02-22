@@ -99,6 +99,9 @@ export default {
             this.$router.push({name: 'createTopic', params: {subjectName: this.subjectName}})
         }
     },
+    created() {
+        debugger
+    },
     apollo: {
         topics: {
             query: gql`

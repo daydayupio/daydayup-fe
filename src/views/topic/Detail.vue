@@ -175,6 +175,7 @@ export default {
             .desc {
                 flex: 1;
                 font-size: 14px;
+                padding: 0 16px 0 0;
             }
         }
     }

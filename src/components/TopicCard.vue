@@ -7,7 +7,7 @@
         </div>
         <div class="views square">
             <span>{{ views }}</span>
-            <span class="text">阅读</span>
+            <span class="text">浏览</span>
         </div>
     </div>
     <div class="summary">

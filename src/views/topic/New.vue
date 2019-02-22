@@ -14,7 +14,7 @@
         class="form"
         >
         <FormItem label="话题名称">
-            <Input v-model="newTopic.name" />
+            <Input v-model="newTopic.title" />
         </FormItem>
         <FormItem label="话题描述">
             <Input 
@@ -53,7 +53,7 @@ export default {
             const [err, res] = await mutate(this, {
                 mutation: gql`
                     mutation createTopic {
-                        subjectName: createTopic(title: "${title}", description: "${description}")
+                        id: createTopic(title: "${title}", description: "${description}", subjectName: "${this.subjectName}")
                     }
                 `
             })
@@ -62,7 +62,9 @@ export default {
                 this.$Message.error(errorMessage);
                 return;
             }
+            const topicId = res.data.id
             this.$Message.success('创建成功')
+            this.$router.push({name: 'topic', params: {subjectName: this.subjectName, id: topicId}})
         }
     }
 }
