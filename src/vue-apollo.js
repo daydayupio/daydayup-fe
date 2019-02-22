@@ -1,5 +1,9 @@
 import Vue from "vue";
 import VueApollo from "vue-apollo";
+import ERROR_CODE from './config/errorCode'
+import router from './router'
+import APP_CONFIG from './config/app'
+import {getVueApolloErrorCode} from './utils/helper'
 import {
   createApolloClient,
   restartWebsockets
@@ -9,7 +13,7 @@ import {
 Vue.use(VueApollo);
 
 // Name of the localStorage item
-const AUTH_TOKEN = "apollo-token";
+const AUTH_TOKEN = APP_CONFIG.AUTH_TOKEN;
 
 // Http endpoint
 const httpEndpoint =
@@ -69,11 +73,14 @@ export function createProvider(options = {}) {
     },
     errorHandler(error) {
       // eslint-disable-next-line no-console
-      console.log(
-        "%cError",
-        "background: red; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold;",
-        error.message
-      );
+      if ([ERROR_CODE.NOT_LOGIN, ERROR_CODE.SESSION_EXPIRED].includes(getVueApolloErrorCode(error))) {
+        router.push({name: 'login'})
+      }
+      // console.log(
+      //   "%cError",
+      //   "background: red; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold;",
+      //   error.message
+      // );
     }
   });
 

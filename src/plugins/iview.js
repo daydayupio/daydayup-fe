@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { ButtonGroup, Button, Icon, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, InputNumber, Form, FormItem, Row, Col } from "iview";
+import { ButtonGroup, Button, Icon, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, InputNumber, Form, FormItem, Row, Col, Message } from "iview";
 
 Vue.component("Button", Button);
 Vue.component("ButtonGroup", ButtonGroup);
@@ -14,5 +14,6 @@ Vue.component("Form", Form);
 Vue.component("FormItem", FormItem);
 Vue.component("Row", Row);
 Vue.component("i-col", Col);
+Vue.component("Message", Message);
 
 import "iview/dist/styles/iview.css";
