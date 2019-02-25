@@ -21,7 +21,7 @@
                         type="success"
                         @click="createTopicHandler"
                         >
-                        创建一个话题
+                        创建一个新话题
                     </Button>
                 </ButtonGroup>
             </div>
@@ -42,9 +42,8 @@
             </topic-card>
         </div>
     </div>
-    <div class="subject-section">
-
-    </div>
+    <!-- <div class="subject-section">
+    </div> -->
 </div>
 </template>
 

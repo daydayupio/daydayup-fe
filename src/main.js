@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import { createProvider } from "./vue-apollo";
 import "iview/dist/styles/iview.css"
+import '../statics/font/iconfont.css'
 import "./style.less"
 import moment from 'moment'
 moment.locale('zh-cn')

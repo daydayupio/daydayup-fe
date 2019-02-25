@@ -42,9 +42,8 @@
 import Login from "./Login";
 import Register from "./Register";
 import gql from "graphql-tag";
-import { mutate } from "../../utils/helper";
+import { mutate, getVueApolloErrorMessage } from "../../utils/helper";
 import { onLogin } from "../../vue-apollo.js";
-import {getVueApolloErrorMessage} from '../../utils/helper.js'
 export default {
   components: {
     Login,

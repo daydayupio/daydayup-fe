@@ -35,6 +35,9 @@
                 </div>
             </div>
             <div class="opinions-section">
+                <div class="reply-section">
+                    <editor></editor>
+                </div>
             </div>
         </div>
         <div class="right meta">
@@ -57,7 +60,11 @@
 <script>
 import gql from 'graphql-tag'
 import moment from 'moment'
+import Editor from '../../components/Editor'
 export default {
+    components: {
+        Editor
+    },
     data() {
         return {
             topic: {

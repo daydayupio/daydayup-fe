@@ -11,6 +11,8 @@
     "@types/vue-router": "^2.0.0",
     "iview": "^3.0.1",
     "moment": "^2.24.0",
+    "tiptap": "^1.13.0",
+    "tiptap-extensions": "^1.13.0",
     "vue": "^2.5.22",
     "vue-apollo": "^3.0.0-beta.11",
     "vue-router": "^3.0.1",

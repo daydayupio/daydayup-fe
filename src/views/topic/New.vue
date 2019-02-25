@@ -66,6 +66,9 @@ export default {
             this.$Message.success('创建成功')
             this.$router.push({name: 'topic', params: {subjectName: this.subjectName, id: topicId}})
         }
+    },
+    created() {
+        debugger
     }
 }
 </script>
